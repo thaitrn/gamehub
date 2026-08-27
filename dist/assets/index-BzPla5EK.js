@@ -18,6 +18,6 @@
   </header>
   <main id="catalog" class="shell">
     <section class="intro" aria-labelledby="page-title"><p class="eyebrow">DANH MỤC</p><h1 id="page-title">Chọn một thế giới để chơi.</h1><p>Tất cả game công khai, trong một nơi gọn gàng. Chạm vào ảnh, tên hoặc nút để bắt đầu.</p></section>
-    <section aria-labelledby="games-title"><div class="section-heading"><h2 id="games-title">Đang sẵn sàng</h2><p>${o.length} game</p></div><div class="game-grid">${o.map(p).join("")}</div></section>
+    <section aria-labelledby="games-title"><div class="section-heading"><h2 id="games-title">Sẵn sàng</h2><p>${o.length} game</p></div><div class="game-grid">${o.map(p).join("")}</div></section>
   </main>
   <footer class="shell site-footer"><p>GameHub <span aria-hidden="true">·</span> Chơi vui nhé.</p></footer>`;
