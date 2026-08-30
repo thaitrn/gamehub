@@ -13,7 +13,7 @@ GitHub quản lý yêu cầu, source, review, CI evidence, release và decision 
 
 MVP governance gồm:
 
-1. Một GitHub Project trung tâm quản lý migration của sáu sản phẩm.
+1. GitHub Issues + labels + milestone là hệ thống quản trị chính. GitHub Project trung tâm là portfolio enhancement được phép deferred theo quyết định CEO nếu OAuth Project v2 chưa được cấp.
 2. Labels, milestone và issue contract thống nhất trên sáu repository.
 3. Luồng bắt buộc `Issue → branch → PR → Actions → Vercel Preview → review → merge → Vercel Production → QA → Release`.
 4. Repo templates/config version-controlled; settings/rules có readback.
@@ -84,7 +84,9 @@ Views: `Portfolio` group Product; `Delivery` board theo Status; `P0/P1`; `Privat
 
 Active items phải add: initiative `gamehub#1`, sáu migration issues, ba Game3 QA bugs và Maybay29 durable API. Project automation chỉ hỗ trợ view; chuyển Done vẫn cần acceptance/evidence và QA/PM gate.
 
-Trạng thái thực thi tại thời điểm tài liệu: project chưa thể tạo vì token GitHub CLI thiếu OAuth scopes `read:project` và `project`. Lệnh operator cần authorize: `gh auth refresh -h github.com -s read:project -s project`; sau đó phải tạo/readback Project URL, node ID, fields và item count trước verdict.
+Trạng thái thực thi tại thời điểm tài liệu: project chưa thể tạo vì token GitHub CLI thiếu OAuth scopes `read:project` và `project`; `gh project list` trả lỗi yêu cầu `read:project`. CEO quyết định ngày 2026-08-30 không để OAuth tương tác chặn migration và chấp nhận **Project v2 DEFERRED**. Trong giai đoạn này, 11 issues, 17 labels/repo, milestone, PR/Actions/Vercel checks là hệ thống quản trị chính; các child migration không bị block.
+
+Khi operator muốn enable portfolio view sau này: chạy `gh auth refresh -h github.com -s read:project -s project`, hoàn tất interactive web authorization, rồi tạo project theo schema ở trên và readback URL, node ID, sáu fields cùng item count. Không được tuyên bố Project đã tồn tại trước readback đó.
 
 ## 5. Labels, milestone và issue contract
 
@@ -246,12 +248,12 @@ GitHub Free private quota controls: Ubuntu only nếu không có lý do khác, `
 
 ## 13. Gate verdict
 
-`GH-GOVERNANCE-READY` chỉ được cấp khi đồng thời có:
+`GH-GOVERNANCE-READY` được cấp khi đồng thời có:
 
-- GitHub Project URL/node ID, six fields và active item readback.
 - 17 labels + milestone readback trên cả sáu repo.
 - 11 active issue URLs/readback, không duplicate.
 - Commit SHA + GitHub blob URL của tài liệu này.
 - Handoff CI/build/check matrix đến implementation owners.
+- Project v2 có URL/node ID, sáu fields và active item readback; **hoặc** có quyết định CEO cho phép deferred kèm evidence thiếu OAuth scopes và hướng dẫn enable sau.
 
-Hiện labels/milestones/issues đã được tạo và readback phải chạy ở final verification. Project vẫn là blocker OAuth scope; do đó chưa được tuyên bố governance-ready cho đến khi operator authorize và Project được tạo/readback.
+Quyết định CEO ngày 2026-08-30 áp dụng nhánh deferred: Project v2 không phải blocker. Final verification vẫn phải readback labels, milestones, issues, commit/blob URL và xác nhận handoff của sáu child tasks trước khi cấp verdict.
