@@ -12,9 +12,9 @@ describe('public game inventory', () => {
 
   it('uses canonical HTTPS play URLs only for publicly playable records', () => {
     expect(games.map((game) => game.playUrl)).toEqual([
-      'https://thaitrn.github.io/pixel-quest/',
-      'https://game3-sandy-eta.vercel.app',
-      'https://thaitrn.github.io/babylon-pilot/',
+      'https://thais-mac-mini.tail6e29ae.ts.net/pixel-quest/',
+      'https://thais-mac-mini.tail6e29ae.ts.net/game3/',
+      'https://thais-mac-mini.tail6e29ae.ts.net/babylon-pilot/',
     ]);
     for (const game of games) {
       expect(game.playUrl).toMatch(/^https:\/\//);
