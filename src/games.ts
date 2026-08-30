@@ -1,7 +1,7 @@
 export type GameStatus = 'Live' | 'Pilot';
 
 export interface Game {
-  id: 'pixel-quest' | 'maybay29' | 'babylon-pilot';
+  id: 'pixel-quest' | 'game3' | 'babylon-pilot';
   name: string;
   shortDescription: string;
   status: GameStatus;
@@ -21,46 +21,47 @@ export const games: readonly Game[] = [
   {
     id: 'pixel-quest',
     name: 'Pixel Quest',
-    shortDescription: 'Một chuyến phiêu lưu pixel gọn nhẹ, sẵn sàng để bạn bắt đầu ngay.',
+    shortDescription:
+      'Game platformer pixel-art trên web: chọn chế độ, vượt màn, thu thập vật phẩm và chinh phục bảng xếp hạng.',
     status: 'Live',
-    tags: ['Phiêu lưu', 'Pixel'],
+    tags: ['Platformer', 'Pixel Art', 'Web Game'],
     art: 'quest',
-    coverAlt: 'Minh hoạ pixel trừu tượng với mặt trời và địa hình phiêu lưu.',
+    coverAlt: 'Ảnh bìa game platformer Pixel Quest phong cách pixel-art.',
     playUrl: 'https://thaitrn.github.io/pixel-quest/',
     ctaLabel: 'Chơi ngay',
     published: true,
     sortOrder: 1,
-    owner: 'Product owner',
-    lastVerifiedAt: '2026-08-27',
+    owner: 'thaitrn',
+    lastVerifiedAt: '2026-08-30',
   },
   {
-    id: 'maybay29',
-    name: 'Máy Bay Mừng 2/9',
-    shortDescription: 'Cất cánh trong một trải nghiệm bay vui nhộn, lấy cảm hứng từ ngày hội.',
+    id: 'game3',
+    name: 'Tàu Vũ Trụ Cộng Số',
+    shortDescription: 'Lái tàu bằng một ngón, né thiên thạch, nhặt sao và giải toán cộng trừ trong phạm vi 100.',
     status: 'Live',
-    tags: ['Bay lượn', 'Nhịp độ nhanh'],
+    tags: ['Giáo dục', 'Toán học'],
     art: 'flight',
-    coverAlt: 'Minh hoạ máy bay giấy trừu tượng bay qua các đám mây.',
-    playUrl: 'https://thaitrn.github.io/maybay29/',
+    coverAlt: 'Minh hoạ tàu vũ trụ bay giữa các vì sao và thiên thạch.',
+    playUrl: 'https://game3-sandy-eta.vercel.app',
     ctaLabel: 'Chơi ngay',
     published: true,
     sortOrder: 2,
     owner: 'Product owner',
-    lastVerifiedAt: '2026-08-27',
+    lastVerifiedAt: '2026-08-30',
   },
   {
     id: 'babylon-pilot',
-    name: 'Babylon Pilot',
-    shortDescription: 'Bản trải nghiệm thử nghiệm cho hành trình khám phá thế giới Babylon.',
+    name: 'Khoa học lung linh',
+    shortDescription: 'Chạm hoặc click để thu thập 10 linh thể phát sáng giữa cực quang hạt 3D.',
     status: 'Pilot',
-    tags: ['Pilot', 'Khám phá'],
+    tags: ['3D', 'Babylon.js', 'WebGPU', 'WebGL2', 'Particle', 'Interactive', 'Mobile'],
     art: 'babylon',
-    coverAlt: 'Minh hoạ kiến trúc cổ điển trừu tượng và vầng trăng.',
+    coverAlt: 'Minh hoạ các linh thể phát sáng giữa cực quang hạt trong không gian 3D.',
     playUrl: 'https://thaitrn.github.io/babylon-pilot/',
     ctaLabel: 'Trải nghiệm pilot',
     published: true,
     sortOrder: 3,
     owner: 'Product owner',
-    lastVerifiedAt: '2026-08-27',
+    lastVerifiedAt: '2026-08-30',
   },
 ] as const;
